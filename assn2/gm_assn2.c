@@ -13,7 +13,7 @@ the copy will receive a zero on this assignment.
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(){ string argA
+int main(int argc, char *argA[]){ 
 	int pid;
 	printf("PARENT started, now waiting for child\n");
 	pid = fork();
@@ -23,7 +23,7 @@ int main(){ string argA
 		}
 		else {
 			printf("CHILD started. Argument provided. Calling execlp(), never to return (sniff)\n");
-			execelp(argA);
+			execlp("./", argA[argc]);
 		}
 		exit(0);
 	}
